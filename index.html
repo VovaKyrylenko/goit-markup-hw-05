@@ -60,7 +60,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-h1">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="hero-btn">Замовити послугу</button>
+          <button type="button" class="hero-btn" data-modal-open>Замовити послугу</button>
         </div>
       </section>
     </div>
@@ -123,13 +123,28 @@
         <h2 class="section-title">Чим ми займаємося</h2>
         <ul class="services-list">
           <li class="service">
-            <img src="./images/box-1.jpg" alt="Програмуємо" class="service-img" />
+            <div class="service-thumb">
+              <img src="./images/box-1.jpg" alt="Програмуємо" class="service-img" />
+              <div class="overlay">
+                <p class="service-text">Десктопні додатки</p>
+              </div>
+            </div>
           </li>
           <li class="service">
+            <div class="service-thumb">
             <img src="./images/box-2.jpg" alt="Робимо макети" class="service-img" />
+            <div class="overlay">
+              <p class="service-text">Мобільні додатки</p>
+            </div>
+            </div>
           </li>
           <li class="service">
+            <div class="service-thumb">
             <img src="./images/box-3.jpg" alt="Малюємо" class="service-img" />
+            <div class="overlay">
+              <p class="service-text">Дизайнерські рішення</p>
+            </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -329,6 +344,17 @@
       </ul>
     </section>
     </div>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" data-modal-close>
+        <div class="close">
+          <svg>
+            <use href="./images/icons/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </div>
+      </button>
+      </div>
+    </div>
   </main>
   <footer id="contacts" class="footer">
     <div class="container">
@@ -349,8 +375,8 @@
             </li>
           </ul>
         </address>
-        </div>
-        <div class="wrapper">
+      </div>
+      <div class="wrapper">
         <p class="text-footer">приєднуйтесь</p>
         <ul class="social-links-list">
           <li class="item">
@@ -382,9 +408,10 @@
             </a>
           </li>
         </ul>
-    </div>
+      </div>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
