@@ -9,6 +9,7 @@
   --ourteam-bg-cl: #f5f4fa;
   --border-cl: #eee;
   --social-links-cl: #afb1b8;
+  --overlay-hero: rgba(47, 48, 58, 0.4);
 
   /* animations */
   --animation-time: 250ms;
@@ -378,12 +379,14 @@ li.item div.product-wrp {
 /* !STUDIO */
 
 section.hero {
-  background-image: url("../images/background/hero-background.jpg");
+  background-image: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
+    url("../images/background/hero-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 200px 0;
   max-width: 1600px;
   margin: auto;
+  position: relative;
 }
 
 /* text "Ефективні рішення для вашого бізнесу" */
@@ -681,6 +684,8 @@ a.contacts-footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+
+  transition: scale var(--animation-time) var(--transition-timing-function);
 }
 
 .backdrop div.modal {
@@ -693,7 +698,25 @@ a.contacts-footer {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+
+  transition:  transform var(--animation-time) var(--transition-timing-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@keyframes modal {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 div.modal div.close {
