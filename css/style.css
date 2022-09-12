@@ -707,18 +707,6 @@ a.contacts-footer {
   transform: translate(-50%, -50%) scale(0);
 }
 
-@keyframes modal {
-  0% {
-    transform: scale(0.1);
-  }
-  50% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 div.modal div.close {
   position: absolute;
 
